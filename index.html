@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Armoire Électrique</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; }
+    header { background-color: #0f172a; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 20px; }
+    .badge { background: #22c55e; color: white; padding: 5px 10px; border-radius: 15px; font-weight: bold; font-size: 12px; }
+    .main-container { display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; }
+    .fiche-technique { flex: 1; min-width: 300px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .fiche-technique h2 { color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    td { padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+    td:first-child { font-weight: bold; color: #64748b; }
+    .viewer-container { flex: 2; min-width: 350px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .plans-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+    .plan-card { flex: 1; min-width: 200px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .btn-plan { display: inline-block; background-color: #0696d7; color: white; padding: 12px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 14px; margin-top: 10px; width: 80%; }
+    .btn-plan:hover { opacity: 0.9; }
+    .btn-signalement { display: block; background: #2563eb; color: white; text-align: center; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; }
+    .qr-container { margin-top: 15px; padding-top: 10px; border-top: 1px dashed #cbd5e1; width: 100%; text-align: center; }
+    .qr-container img { width: 120px; height: 120px; margin-top: 5px; }
+    .qr-label { font-size: 11px; color: #64748b; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><strong>Armoire Électrique</strong></h1>
+    <span class="badge">● En Service</span>
+  </header>
+
+  <div class="main-container">
+    
+    <!-- Fiche Technique -->
+    <div class="fiche-technique">
+      <h2>Fiche Technique</h2>
+      <table>
+        <tr><td>Localisation :</td><td>Usine Opella - Local R+2</td></tr>
+        <tr><td>Tension Nominale :</td><td>400V AC (3P+N+T)</td></tr>
+        <tr><td>Courant Nominal :</td><td>250 A</td></tr>
+        <tr><td>Protection :</td><td>IP 55 / IK 10</td></tr>
+        <tr><td>Norme :</td><td>IEC 61439-2</td></tr>
+        <tr><td>Plans disponibles :</td><td>R+2 & Carthago</td></tr>
+      </table>
+
+      <a href="https://forms.google.com" target="_blank" class="btn-signalement">⚠️ Signaler une anomalie</a>
+    </div>
+
+    <!-- Section Sélection des Plans PDF -->
+    <div class="viewer-container">
+      <h2 style="color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 0;">📐 Plans Schématiques (PDF)</h2>
+      <p style="color: #64748b;">Sélectionnez le plan que vous souhaitez consulter :</p>
+      
+      <div class="plans-grid">
+        <!-- Carte Plan R+2 -->
+        <div class="plan-card">
+          <div style="font-size: 40px; margin-bottom: 10px;">📄</div>
+          <h3 style="margin: 0 0 10px 0; color: #0f172a;">Plan R+2</h3>
+          <p style="color: #64748b; font-size: 13px;">Schéma électrique du niveau R+2</p>
+          
+          <a href="Plan_R2.pdf" target="_blank" class="btn-plan">
+            📄 Ouvrir Plan R+2
+          </a>
+
+          <!-- QR Code Plan R+2 -->
+          <div class="qr-container">
+            <span class="qr-label">📱 Scanner pour ouvrir sur mobile :</span><br>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fglowing-dieffenbachia-039021.netlify.app%2FPlan_R2.pdf" alt="QR Code Plan R+2">
+          </div>
+        </div>
+
+        <!-- Carte Plan Carthago -->
+        <div class="plan-card">
+          <div style="font-size: 40px; margin-bottom: 10px;">📄</div>
+          <h3 style="margin: 0 0 10px 0; color: #0f172a;">Plan Carthago</h3>
+          <p style="color: #64748b; font-size: 13px;">Schéma électrique Carthago</p>
+          
+          <a href="carthago.pdf" target="_blank" class="btn-plan" style="background-color: #0d9488;">
+            📄 Ouvrir Plan Carthago
+          </a>
+
+          <!-- QR Code Plan Carthago -->
+          <div class="qr-container">
+            <span class="qr-label">📱 Scanner pour ouvrir sur mobile :</span><br>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fglowing-dieffenbachia-039021.netlify.app%2Fcarthago.pdf" alt="QR Code Plan Carthago">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
